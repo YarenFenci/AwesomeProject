@@ -1,0 +1,30 @@
+name: React Native CI
+
+on:
+  push:
+    branches:
+      - main  # main dalındaki her push işlemi tetiklenir
+  pull_request:
+    branches:
+      - main  # main dalındaki her pull request işlemi tetiklenir
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Testlerin Ubuntu üzerinde çalışmasını sağlar
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # Kodun repodan çekilmesini sağlar
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Node.js'in versiyonunu ayarlıyoruz
+
+    - name: Install dependencies
+      run: |
+        npm install  # Gerekli bağımlılıkları yükler
+
+    - name: Run tests
+      run: |
+        npm test  # Testleri çalıştırır
