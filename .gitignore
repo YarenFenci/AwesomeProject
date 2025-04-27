@@ -72,3 +72,23 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+# Node.js dependencies
+node_modules/
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Environment files
+.env
+
+# Build directories
+build/
+dist/
+
+# IDE or Editor directories
+.vscode/
+.idea/
+
+
